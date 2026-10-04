@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tu cartelera fav</title>
+	<link rel="stylesheet" href="estiloprincipal.css">
+	<link rel="stylesheet" href="palancasorp.css">
+	<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/glacial-indifference">
+</head>
+<body>
+	<header class="encabezado">
+		<div class="encabezado__contenido">
+			<h1 class="encabezado__titulo">TICKET PARA UNO</h1>
+		</div>
+
+		<div class="encabezado__imagen-contenedor">
+			<img
+				class="encabezado__imagen"
+				src="https://drive.google.com/thumbnail?id=1TJwf6GFVV9Q1QARGtbrku3B0htWQ-xm8&amp;sz=w1200"
+				alt="Imagen principal de la cartelera">
+		</div>
+	</header>
+	<div class="franja-decorativa" aria-label="En cartelera">
+		<h3 class="franja-decorativa_track"> | ACCI&Oacute;N | PEL&Iacute;CULA | ROMANCE | PALOMITAS | CINE | CARTELERA | CIENCIA FICCI&Oacute;N | ADIVINA | BUTACAS | MISTERIO | PR&Oacute;XIMAMENTE</h3>
+	</div>
+	<div class="pagina-cartelera">
+		<main class="contenido-cartelera">
+			<section class="seccion-titulo">
+				<img class="seccion-titulo__imagen" src="https://drive.google.com/thumbnail?id=1zPvaK3LXmKMhx8mQ2irrSNpxCdUHuAi6&amp;sz=w1200" alt="Qué vemos hoy">
+			</section>
+
+			<section class="movie-slot" id="movie-slot" aria-labelledby="slot-title">
+
+				<div class="slot-heading">
+					<p>Deja que la suerte elija tu película.</p>
+				</div>
+
+				<div class="slot-machine" id="slot-machine">
+					<div class="slot-reels" aria-label="Género y película seleccionados al azar" aria-live="polite">
+						<span class="slot-reel" id="slot-reel-genre">GÉNERO</span>
+						<span class="slot-reel" id="slot-reel-title">PELÍCULA</span>
+					</div>
+					<button class="slot-pull" id="pull-lever" type="button">
+						<span class="lever-art" aria-hidden="true"><span class="lever-knob"></span><span class="lever-shaft"></span><span class="lever-base"></span></span>
+						<span class="slot-pull__label">TIRAR DE LA PALANCA</span>
+					</button>
+				</div>
+				<p class="slot-status" id="slot-status" aria-live="polite">Lista para girar</p>
+
+				<article class="movie-result" id="movie-result" aria-labelledby="movie-title" hidden>
+					<button class="movie-result__close" id="close-result" type="button" aria-label="Cerrar resultado y volver a tirar">&#215;</button>
+					<div class="movie-result__top">
+						<div class="movie-poster" id="movie-poster">
+							<img class="movie-poster__image" id="movie-poster-image" alt="Póster de la película seleccionada" hidden>
+							<span class="movie-poster__orbit"></span>
+							<span class="movie-poster__moon"></span>
+							<span class="movie-poster__silhouette"></span>
+							<span class="movie-poster__wordmark">UNA PELÍCULA<br>PARA ESTA NOCHE</span>
+						</div>
+						<div class="movie-details">
+							<h2 id="movie-title"></h2>
+							<dl>
+								<div><dt>Género</dt><dd id="movie-genre"></dd></div>
+								<div><dt>Fecha de estreno</dt><dd id="movie-release"></dd></div>
+								<div><dt>Duración</dt><dd id="movie-duration"></dd></div>
+								<div><dt>Director</dt><dd id="movie-director"></dd></div>
+								<div><dt>Elenco</dt><dd id="movie-cast"></dd></div>
+							</dl>
+						</div>
+					</div>
+					<div class="movie-synopsis">
+						<h3>Sinopsis</h3>
+						<p id="movie-synopsis"></p>
+					</div>
+					<div class="movie-result__actions">
+						<button class="save-function" id="save-function" type="button">Guardar función</button>
+						<p class="save-status" id="save-status" aria-live="polite"></p>
+					</div>
+				</article>
+			</section>
+
+			<section class="selector" aria-label="Otras opciones">
+				<button class="opcion-card opcion-card--cta" id="open-recommendation-form" type="button" aria-label="Recomendar una película">
+					<img src="https://drive.google.com/thumbnail?id=1evPgqu4JC3YGLou3PBGAB8IlzbfRpUON&amp;sz=w1200" alt="Ver más opciones" class="opcion-card__imagen">
+				</button>
+			</section>
+
+			<dialog class="recommendation-dialog" id="recommendation-dialog" aria-labelledby="recommendation-title">
+				<div class="recommendation-dialog__header">
+					<div>
+						<h2 id="recommendation-title">Recomienda una película</h2>
+					</div>
+					<button class="recommendation-dialog__close" id="close-recommendation-form" type="button" aria-label="Cerrar formulario">&#215;</button>
+				</div>
+
+				<form class="recommendation-form" id="recommendation-form">
+					<label class="recommendation-form__field" for="recommendation-movie-title">
+						<span>Título de la película</span>
+						<input id="recommendation-movie-title" name="title" type="text" maxlength="180" autocomplete="off" required>
+					</label>
+
+					<label class="recommendation-form__field" for="recommendation-genre">
+						<span>Género</span>
+						<select id="recommendation-genre" name="genre" required>
+							<option value="" selected disabled>Selecciona un género</option>
+							<option>Acción</option>
+							<option>Comedia</option>
+							<option>Drama</option>
+							<option>Terror</option>
+							<option>Ciencia Ficción</option>
+							<option>Suspenso</option>
+							<option>Romance</option>
+							<option>Aventura</option>
+							<option>Fantasía</option>
+							<option>Animación</option>
+							<option>Crimen</option>
+							<option>Documental</option>
+							<option>Musical</option>
+							<option>Cine Independiente</option>
+							<option>Western</option>
+						</select>
+					</label>
+
+					<label class="recommendation-form__field" for="recommendation-review">
+						<span>¿Por qué la recomiendas?</span>
+						<textarea id="recommendation-review" name="review" rows="4" maxlength="2000" placeholder="Danos tu reseña..." required></textarea>
+					</label>
+
+					<label class="recommendation-form__field" for="recommendation-contact">
+						<span>Instagram / Correo</span>
+						<input id="recommendation-contact" name="contact" type="text" maxlength="180" autocomplete="email" placeholder="@usuario o correo@ejemplo.com" required>
+					</label>
+
+					<p class="recommendation-form__status" id="recommendation-status" aria-live="polite"></p>
+					<div class="recommendation-form__actions">
+						<button class="recommendation-form__submit" type="submit">Enviar recomendación</button>
+					</div>
+				</form>
+			</dialog>
+		</main>
+
+		<footer class="pie-pagina" aria-label="Pie de página">
+			<p class="pie-pagina__contacto"><strong>Instagram:</strong> <span>@bysmoke.movies</span></p>
+		</footer>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+</html>

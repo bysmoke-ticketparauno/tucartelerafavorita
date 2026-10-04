@@ -1,0 +1,281 @@
+:root {
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	color: #171717;
+	background: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+}
+
+/* ==================== ANIMACION DE LETRAS ==================== */
+.franja-decorativa_track {
+	display: flex;
+	align-items: center;
+	width: max-content;
+	margin: 0;
+	font-size: 1.25rem;
+	line-height: 1.2;
+	color: #ffffff;
+	white-space: nowrap;
+	animation: textoFranja 18s linear infinite;
+}
+
+.franja-decorativa_track::after {
+	content: " | ACCI\0000D3N | PEL\0000CDCULA | ROMANCE | PALOMITAS | CINE | CARTELERA | CIENCIA FICCI\0000D3N | ADIVINA | BUTACAS | MISTERIO | PR\0000D3XIMAMENTE";
+	white-space: nowrap;
+}
+
+/* ==================== ENCABEZADO ==================== */
+.encabezado {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 0 0 7vw;
+	overflow: hidden;
+	background: #ffffff;
+	border-bottom: 1px solid #dedede;
+}
+
+.encabezado__contenido {
+	min-width: 0;
+}
+
+.encabezado__titulo {
+	margin: 0;
+	font-size: 1.35rem;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.encabezado__imagen-contenedor {
+    position: relative;
+    flex: 0 0 96px;
+    width: 96px;
+    height: 96px;
+    overflow: visible;
+}
+
+.encabezado__imagen {
+    display: block;
+    position: relative;
+    left: -145px;
+    width: 250%;
+    height: 100%;
+    object-fit: cover;
+
+    /* ZOOM */
+    transform: scale(1);
+
+    /* POSICION*/
+    object-position: right;
+}
+
+@media (max-width: 800px) {
+	.encabezado {
+		gap: 0.5rem;
+		padding: 0 0.75rem 0 1rem;
+	}
+
+	.encabezado__titulo {
+		font-size: clamp(1rem, 5vw, 1.25rem);
+	}
+
+	.encabezado__imagen-contenedor {
+		flex-basis: 110px;
+		width: 110px;
+		height: 70px;
+		flex-shrink: 0;
+		overflow: hidden;
+	}
+
+	.encabezado__imagen {
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: right center;
+		transform: none;
+	}
+}
+
+/* ==================== EN CARTELERA FRANJA ==================== */
+.franja-decorativa {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background: #000000;
+    overflow: hidden;
+    position: relative;
+}
+
+.pagina-cartelera {
+	min-height: calc(100vh - 130px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	background-color: #ffffff;
+}
+
+.contenido-cartelera {
+	min-height: calc(100vh - 190px);
+	background-color: #ffffff;
+}
+
+.seccion-titulo {
+	width: 100%;
+	padding: 1rem 1rem 1rem;
+}
+
+.seccion-titulo__imagen {
+	display: block;
+	width: min(85%, 700px);
+	max-height: 60px;
+	height: auto;
+	margin: 0 auto;
+	object-fit: contain;
+}
+
+.selector {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 1rem;                 /* Acorta drásticamente la distancia entre los bloques internos */
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 1rem 1rem 1rem;   /* Padding mínimo arriba y abajo */
+}
+
+.opcion-card {
+	display: block;
+	width: min(85%, 260px);
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	overflow: hidden;
+	background: transparent;
+	cursor: pointer;
+	line-height: 0;
+	transition: transform 0.2s ease;
+}
+
+.opcion-card__imagen {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+.opcion-card:hover {
+	transform: translateY(-2px);
+}
+
+.opcion-card--cta {
+	margin-top: 0;
+}
+
+@media (max-width: 799px) {
+	.pagina-cartelera {
+		min-height: calc(100svh - 130px);
+	}
+
+	.contenido-cartelera {
+		min-height: 0;
+	}
+
+	.seccion-titulo {
+		padding: 0.5rem 1rem 0;
+	}
+
+	.selector {
+		gap: 0.5rem;
+		padding: 0.5rem 1rem 1rem;
+	}
+
+	.opcion-card--cta {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 800px) {
+	.pagina-cartelera {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		align-content: space-between;
+		column-gap: 1rem;
+		padding-top: 1rem;
+	}
+
+	.opcion-card {
+		justify-self: center;
+	}
+
+	.contenido-cartelera,
+	.seccion-titulo,
+	.selector {
+		display: contents;
+	}
+
+	.seccion-titulo__imagen {
+		grid-column: 1 / -1;
+	}
+
+	.opcion-card--cta {
+		grid-column: 1 / -1;
+		justify-self: center;
+		width: min(85%, 340px);
+		margin-bottom: 2rem;
+	}
+
+	.pie-pagina {
+		grid-column: 1 / -1;
+	}
+}
+
+@media (min-width: 800px) and (max-height: 700px) {
+	.seccion-titulo {
+		padding: 0.5rem 1rem 0.75rem;
+	}
+
+	.seccion-titulo__imagen {
+		max-height: 48px;
+	}
+
+	.selector {
+		row-gap: 1rem;
+		padding: 1rem 1rem 1rem;
+	}
+}
+
+.pie-pagina {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 60px;
+	background-color: #535454;
+	color: #ffffff;
+}
+
+.pie-pagina__contacto {
+	margin: 0;
+	font-family: "Glacial Indifference", sans-serif;
+	font-size: 1rem;
+	text-align: center;
+}
+
+@keyframes textoFranja {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
