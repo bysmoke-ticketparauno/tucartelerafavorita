@@ -33,7 +33,6 @@ const saveStatus = document.querySelector("#save-status");
 const recommendationDialog = document.querySelector("#recommendation-dialog");
 const openRecommendationButton = document.querySelector("#open-recommendation-form");
 const closeRecommendationButton = document.querySelector("#close-recommendation-form");
-const cancelRecommendationButton = document.querySelector("#cancel-recommendation-form");
 const recommendationForm = document.querySelector("#recommendation-form");
 const recommendationSubmitButton = recommendationForm.querySelector("[type='submit']");
 const recommendationStatus = document.querySelector("#recommendation-status");
@@ -413,9 +412,8 @@ function closeRecommendationForm() {
 
 openRecommendationButton.addEventListener("click", openRecommendationForm);
 closeRecommendationButton.addEventListener("click", closeRecommendationForm);
-cancelRecommendationButton.addEventListener("click", closeRecommendationForm);
-recommendationDialog.addEventListener("click", (event) => {
-	if (event.target === recommendationDialog) closeRecommendationForm();
+recommendationDialog.addEventListener("cancel", (event) => {
+	event.preventDefault();
 });
 
 recommendationForm.addEventListener("submit", async (event) => {

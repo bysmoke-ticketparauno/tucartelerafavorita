@@ -27,7 +27,7 @@ body {
 }
 
 .franja-decorativa_track::after {
-	content: " • ACCION • PELICULA • ROMANCE • PALOMITAS • CINE • CARTELERA • CIENCIA FICCION • ADIVINA • BUTACAS • MISTERIO • PROXIMAMENTE";
+	content: " | ACCI\0000D3N | PEL\0000CDCULA | ROMANCE | PALOMITAS | CINE | CARTELERA | CIENCIA FICCI\0000D3N | ADIVINA | BUTACAS | MISTERIO | PR\0000D3XIMAMENTE";
 	white-space: nowrap;
 }
 
@@ -79,13 +79,29 @@ body {
 
 @media (max-width: 800px) {
 	.encabezado {
-		padding: 0 0 0 1.5rem;
+		gap: 0.5rem;
+		padding: 0 0.75rem 0 1rem;
+	}
+
+	.encabezado__titulo {
+		font-size: clamp(1rem, 5vw, 1.25rem);
 	}
 
 	.encabezado__imagen-contenedor {
-		flex-basis: 70px;
-		width: 70px;
+		flex-basis: 110px;
+		width: 110px;
 		height: 70px;
+		flex-shrink: 0;
+		overflow: hidden;
+	}
+
+	.encabezado__imagen {
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: right center;
+		transform: none;
 	}
 }
 
@@ -167,8 +183,25 @@ body {
 }
 
 @media (max-width: 799px) {
+	.pagina-cartelera {
+		min-height: calc(100svh - 130px);
+	}
+
+	.contenido-cartelera {
+		min-height: 0;
+	}
+
+	.seccion-titulo {
+		padding: 0.5rem 1rem 0;
+	}
+
+	.selector {
+		gap: 0.5rem;
+		padding: 0.5rem 1rem 1rem;
+	}
+
 	.opcion-card--cta {
-		margin-top: 2rem;
+		margin-top: 0;
 	}
 }
 

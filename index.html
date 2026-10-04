@@ -22,7 +22,7 @@
 		</div>
 	</header>
 	<div class="franja-decorativa" aria-label="En cartelera">
-		<h3 class="franja-decorativa_track"> • ACCION • PELICULA • ROMANCE • PALOMITAS • CINE • CARTELERA • CIENCIA FICCION • ADIVINA • BUTACAS • MISTERIO • PROXIMAMENTE</h3>
+		<h3 class="franja-decorativa_track"> | ACCI&Oacute;N | PEL&Iacute;CULA | ROMANCE | PALOMITAS | CINE | CARTELERA | CIENCIA FICCI&Oacute;N | ADIVINA | BUTACAS | MISTERIO | PR&Oacute;XIMAMENTE</h3>
 	</div>
 	<div class="pagina-cartelera">
 		<main class="contenido-cartelera">
@@ -89,7 +89,6 @@
 			<dialog class="recommendation-dialog" id="recommendation-dialog" aria-labelledby="recommendation-title">
 				<div class="recommendation-dialog__header">
 					<div>
-						<p class="recommendation-dialog__eyebrow">COMPARTE TU ELECCIÓN</p>
 						<h2 id="recommendation-title">Recomienda una película</h2>
 					</div>
 					<button class="recommendation-dialog__close" id="close-recommendation-form" type="button" aria-label="Cerrar formulario">&#215;</button>
@@ -97,12 +96,12 @@
 
 				<form class="recommendation-form" id="recommendation-form">
 					<label class="recommendation-form__field" for="recommendation-movie-title">
-						<span>Título de la película <span class="recommendation-form__column">Columna A</span></span>
+						<span>Título de la película</span>
 						<input id="recommendation-movie-title" name="title" type="text" maxlength="180" autocomplete="off" required>
 					</label>
 
 					<label class="recommendation-form__field" for="recommendation-genre">
-						<span>Género <span class="recommendation-form__column">Columna B</span></span>
+						<span>Género</span>
 						<select id="recommendation-genre" name="genre" required>
 							<option value="" selected disabled>Selecciona un género</option>
 							<option>Acción</option>
@@ -124,18 +123,17 @@
 					</label>
 
 					<label class="recommendation-form__field" for="recommendation-review">
-						<span>¿Por qué la recomiendas? <span class="recommendation-form__column">Columna C</span></span>
+						<span>¿Por qué la recomiendas?</span>
 						<textarea id="recommendation-review" name="review" rows="4" maxlength="2000" placeholder="Danos tu reseña..." required></textarea>
 					</label>
 
 					<label class="recommendation-form__field" for="recommendation-contact">
-						<span>Instagram / Correo <span class="recommendation-form__column">Columna D</span></span>
+						<span>Instagram / Correo</span>
 						<input id="recommendation-contact" name="contact" type="text" maxlength="180" autocomplete="email" placeholder="@usuario o correo@ejemplo.com" required>
 					</label>
 
 					<p class="recommendation-form__status" id="recommendation-status" aria-live="polite"></p>
 					<div class="recommendation-form__actions">
-						<button class="recommendation-form__cancel" id="cancel-recommendation-form" type="button">Cancelar</button>
 						<button class="recommendation-form__submit" type="submit">Enviar recomendación</button>
 					</div>
 				</form>

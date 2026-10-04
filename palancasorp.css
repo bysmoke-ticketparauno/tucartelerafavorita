@@ -644,7 +644,15 @@
 @media (max-width: 600px) {
 	.movie-slot {
 		width: min(100% - 1.25rem, 920px);
-		padding-top: 0.4rem;
+		padding: 0.25rem 0 0.4rem;
+	}
+
+	.slot-heading {
+		margin-bottom: 0.5rem;
+	}
+
+	.slot-heading > p:last-child {
+		margin-top: 0.2rem;
 	}
 
 	.slot-machine {
@@ -676,6 +684,11 @@
 
 	.slot-pull__label {
 		font-size: 0.62rem;
+	}
+
+	.slot-status {
+		min-height: 1em;
+		margin: 0.3rem 0 0.35rem;
 	}
 
 	.movie-result__top {
